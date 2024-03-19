@@ -87,7 +87,6 @@ ol {
 }
 
 .search-form__fieldset-title {
-  color: #fff;
   font-weight: 400;
   font-size: 18px;
   line-height: 1.4;
@@ -108,7 +107,7 @@ ol {
 }
 
 .search-form__label:has(:focus-visible) {
-  outline: 1px solid #fff;
+  outline: 1px solid currentColor;
 }
 
 .search-form__label-text {
@@ -117,10 +116,10 @@ ol {
 
 .search-form__textfield {
   border-style: none;
-  border-top: 1px solid #fff;
-  border-bottom: 1px solid #fff;
-  color: rgba(255, 255, 255, 0.7);
-  font-family: 'Fira Sans Condensed', sans-serif;
+  border-top: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  color: currentColor;
+  font-family: inherit;
   font-weight: 400;
   font-size: 18px;
   background-color: transparent;
@@ -129,7 +128,7 @@ ol {
 }
 
 .search-form__textfield:active {
-  outline: 1px solid #fff;
+  outline: 1px solid currentColor;
   outline-offset: -1px;
 }
 
@@ -151,7 +150,7 @@ ol {
   width: 19px;
   height: 19px;
   margin-inline-end: 5px;
-  border: 1px solid #fff;
+  border: 1px solid currentColor;
 
 }
 
@@ -159,13 +158,13 @@ ol {
   content: '';
   width: calc(100% - 2px);
   height: calc(100% - 2px);
-  background-color: #fff;
+  background-color: currentColor;
 }
 
 .button {
-  border: 1px solid #fff;
+  border: 1px solid currentColor;
   padding-block: 5px;
-  color: #fff;
+  color: currentColor; 
   font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 700;
   font-size: 18px;
@@ -188,7 +187,7 @@ ol {
 }
 
 .button:focus-visible {
-  outline: 1px solid #fff;
+  outline: 1px solid currentColor;
   outline-offset: 1px;
 }
 
@@ -202,8 +201,6 @@ ol {
 }
 
 .title {
-  padding-block-start: 3px;
-  color: #fff;
   font-family: 'Oswald', sans-serif;
   font-weight: 700;
   font-size: 75px;
@@ -219,32 +216,24 @@ ol {
   position: relative;
   display: flex;
   flex-direction: column;
-  margin-block-start: 22px;
-  overflow: hidden scroll;
+  margin-block-start: 18px;
+  overflow: auto;
   block-size: 298px;
-}
-
-.content__list::-webkit-scrollbar {
-  width: 0;
 }
 
 .content__list-item {
   margin: 2px;
-  margin-block-end: 24px;
+  margin-block-end: 27px;
 }
 
 .content__list-item:last-of-type {
   margin-block-end: 3px;
 }
 
-.content__list-item:active {
-  background: #545050;
-}
-
 .content__card-link {
   display: block;
   outline-offset: 0;
-  color: #fff;
+  color: inherit;
   text-decoration: none;
 }
 
@@ -253,9 +242,17 @@ ol {
 }
 
 .content__card-link:hover {
-  text-decoration: underline solid #fff 1px;
-  text-underline-offset: 6px;
+  text-decoration: underline solid currentColor 1px;
+  text-underline-offset: 2px;
 }
+
+.content__card-link:focus {
+  outline: none;
+} 
+
+.content__card-link:focus-visible {
+  outline: 1px solid currentColor;
+} 
 
 .content__video-card {
   display: flex;
@@ -265,6 +262,7 @@ ol {
 }
 
 .content__video-card-description-container {
+  padding-block-start: 3px;
   width: 50.76%;
 }
 
@@ -274,6 +272,10 @@ ol {
   font-size: 30px;
   line-height: 100%;
   text-transform: uppercase;
+  text-overflow: ellipsis; 
+  white-space: nowrap; 
+  overflow: hidden;
+  max-width: 200px;
 }
 
 .content__video-card-description {
@@ -281,10 +283,12 @@ ol {
   font-weight: 400;
   font-size: 18px;
   line-height: 90%;
+  letter-spacing: -0.01em;
 }
 
 .content__video-card-thumbnail {
   width: 49.24%;
+  height: 103px;
   object-fit: cover;
   object-position: center;
 }
