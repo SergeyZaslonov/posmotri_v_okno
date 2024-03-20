@@ -216,14 +216,14 @@ ol {
   position: relative;
   display: flex;
   flex-direction: column;
-  margin-block-start: 18px;
+  margin-block-start: 21px;
   overflow: auto;
-  block-size: 298px;
+  block-size: 300px;
 }
 
 .content__list-item {
   margin: 2px;
-  margin-block-end: 27px;
+  margin-block-end: 28px;
 }
 
 .content__list-item:last-of-type {
@@ -243,7 +243,11 @@ ol {
 
 .content__card-link:hover {
   text-decoration: underline solid currentColor 1px;
-  text-underline-offset: 2px;
+  text-underline-offset: 3px;
+}
+
+.content__card-link:active {
+  background: #545050;
 }
 
 .content__card-link:focus {
@@ -258,7 +262,6 @@ ol {
   display: flex;
   justify-content: space-between;
   padding: 2px;
-  overflow: hidden;
 }
 
 .content__video-card-description-container {
@@ -297,5 +300,3 @@ ol {
   margin: 3px;
   inline-size: calc(100% - 6px);
 }
-
-/* ***************************************************** */
